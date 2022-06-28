@@ -1,11 +1,11 @@
 encoding: utf-8
 
 # SEO相关信息
-title: TomTao Blog
-description: TomTao的个人博客
-keywords: TomTao,Blog,Java,Html,JavaScript
-author: TomTao
-footerText: 'Copyright © 2016 皖ICP备16016174号'
+title: TomTao626 Blog
+description: TomTao626的个人博客
+keywords: TomTao626,Blog,Java,Html,JavaScript
+author: TomTao626
+footerText: 'Copyright © 2019 浙ICP备19008902号-1'
 
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
