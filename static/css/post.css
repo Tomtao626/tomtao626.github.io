@@ -163,3 +163,8 @@
     margin: 15px 0;
   }
 }
+
+.shicao{
+  border: 3px double #333333;
+  padding:10px 5px 10px 5px;
+}
