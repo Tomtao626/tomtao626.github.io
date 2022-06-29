@@ -3,7 +3,7 @@ layout: mypost
 title:       "算法和数据结构(Python)"
 subtitle:    "Python数据结构"
 description: "经典排序"
-date:        2020-04-10
+date:        2019-04-10
 author:      "Tomtao626"
 image:       ""
 tags:        ["数据结构", "排序"]

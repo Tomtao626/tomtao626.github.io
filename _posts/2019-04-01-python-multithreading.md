@@ -3,7 +3,7 @@ layout: mypost
 title:       "Python多线程与join()使用"
 subtitle:    "Python基础"
 description: "I/O tips"
-date:        2020-04-01
+date:        2019-04-01
 author:      "Tomtao626"
 image:       ""
 tags:        ["进程", "线程", "I/O"]

@@ -3,7 +3,7 @@ layout: mypost
 title:       "Python中的collections模块"
 subtitle:    "Python基础"
 description: "collections模块"
-date:        2020-05-16
+date:        2019-05-16
 author:      "Tomtao626"
 image:       ""
 tags:        ["Collection", "数据结构", "Tips"]
