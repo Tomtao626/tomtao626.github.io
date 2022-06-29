@@ -1,8 +1,8 @@
 ---
 layout: mypost
-title:       "Golang中使用mongo详解"
-subtitle:    "go+mongo使用"
-description: "golang-mongodb"
+title:       "Golang中使用MongoDB详解"
+subtitle:    "Golang-MongoDB使用"
+description: "Golang-MongoDB"
 date:        2020-08-09
 author:      "Tomtao626"
 image:       ""

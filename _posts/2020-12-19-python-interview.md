@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title:       "Python招聘需求和技能体系"
-subtitle:    "python面试"
+subtitle:    "Python面试"
 description: "Python招聘需求和技能体系"
 date:        2020-12-19
 author:      "Tomtao626"

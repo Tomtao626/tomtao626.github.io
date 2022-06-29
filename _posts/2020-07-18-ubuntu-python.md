@@ -2,7 +2,7 @@
 layout: mypost
 title:       "Ubuntu16.04下多版本python安装记录"
 subtitle:    "Python基础"
-description: "ubuntu-python-install"
+description: "Ubuntu-python-install"
 date:        2020-07-18
 author:      "Tomtao626"
 image:       ""

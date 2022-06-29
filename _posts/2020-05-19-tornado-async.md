@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title:       "Python Tornado异步原理"
-subtitle:    "py框架"
+subtitle:    "Python框架"
 description: "Tornado异步原理"
 date:        2020-05-19
 author:      "Tomtao626"
