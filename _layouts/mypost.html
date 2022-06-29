@@ -6,7 +6,12 @@
 <div class="page page-post">
   <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
   {% if page.date %}
-  <div class="subtitle">{{site.author}} 于 {{ page.date | date: "%Y-%m-%d" }} 发布</div>
+  <div class="subtitle">{{site.author}} 于 {{ page.date | date: "%Y-%m-%d" }} 发布
+    <div class="float-right">
+      <span>🥰本站访客数  <span id="busuanzi_value_site_uv"></span></span>
+      <span>👀本文阅读量  <span id="busuanzi_value_page_pv"></span></span>
+    </div>
+  </div>
   {% endif %}
   <div class="post">
     {{ content }}
