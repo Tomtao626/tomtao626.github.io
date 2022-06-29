@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Ubuntu Wireshark permission问题"
-subtitle:    "linux使用"
+subtitle:    "Linux使用"
 description: "ubuntu-wireshark"
 date:        2020-06-16
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["Wireshark", "Tips"]
 categories:  ["LINUX"]

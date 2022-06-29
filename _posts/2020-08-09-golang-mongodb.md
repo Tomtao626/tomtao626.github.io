@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Golang中使用mongo详解"
 subtitle:    "go+mongo使用"
 description: "golang-mongodb"
 date:        2020-08-09
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["MongoDB", "Tips"]
 categories:  ["GOLANG"]

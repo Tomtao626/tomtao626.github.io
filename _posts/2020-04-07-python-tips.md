@@ -1,6 +1,7 @@
 ---
+layout: mypost
 title:       "Python语言特性"
-subtitle:    "py基础"
+subtitle:    "Python基础"
 description: "语言特性"
 date:        2020-04-07
 author:      "tomtao626"

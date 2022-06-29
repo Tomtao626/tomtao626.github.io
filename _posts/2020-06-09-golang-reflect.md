@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Golang中的反射使用参考"
 subtitle:    "Go"
 description: "Golang-反射"
 date:        2020-06-09
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["反射", "Tips"]
 categories:  ["GOLANG"]

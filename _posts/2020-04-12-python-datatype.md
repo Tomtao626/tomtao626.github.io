@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Python数据类型"
-subtitle:    "py基础"
+subtitle:    "Python基础"
 description: "数据结构和类型"
 date:        2020-04-12
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["数据结构", "正则", "Tips"]
 categories:  ["PYTHON"]

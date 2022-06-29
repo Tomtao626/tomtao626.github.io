@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Python中的collections模块"
-subtitle:    "py基础"
+subtitle:    "Python基础"
 description: "collections模块"
 date:        2020-05-16
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["Collection", "数据结构", "Tips"]
 categories:  ["PYTHON"]

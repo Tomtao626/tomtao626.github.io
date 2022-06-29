@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Python编码规范"
-subtitle:    "py基础"
+subtitle:    "Python基础"
 description: "编码规范"
 date:        2020-04-13
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["编码规范", "注解", "Tips"]
 categories:  ["PYTHON"]

@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Redis源码安装过程及问题记录"
 subtitle:    "数据库基础"
 description: "redis-source code-install"
 date:        2020-06-20
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["Redis", "Tips"]
 categories:  ["DATABASE"]

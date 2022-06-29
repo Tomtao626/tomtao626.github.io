@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Python文件操作"
-subtitle:    "py基础"
+subtitle:    "Python基础"
 description: "文件操作"
 date:        2020-04-08
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["OS", "Glob", "Shutil", "Zipfile"]
 categories:  ["PYTHON"]

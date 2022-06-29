@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Python Numpy使用"
 subtitle:    "数据分析"
 description: "Numpy使用"
 date:        2020-05-26
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["数据分析", "Numpy"]
 categories:  ["PYTHON"]

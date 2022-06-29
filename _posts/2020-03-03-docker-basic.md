@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Docker使用"
-subtitle:    "docker基础"
-description: "docker"
+subtitle:    "Docker基础"
+description: "Docker"
 date:        2020-03-03
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["Docker", "Cloud","Tips"]
 categories:  ["LINUX"]

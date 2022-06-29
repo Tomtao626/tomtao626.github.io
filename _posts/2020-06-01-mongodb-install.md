@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "MongoDB系列-安装"
 subtitle:    "数据库基础"
 description: "MongoDB"
 date:        2020-06-01
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["Linux", "MongoDB"]
 categories:  ["DATABASE"]

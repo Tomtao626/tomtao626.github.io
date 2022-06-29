@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "MySQL基操勿六"
 subtitle:    "数据库基础"
 description: "MySQL"
 date:        2020-06-07
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["数据结构", "数据库优化", "MySQL"]
 categories:  ["DATABASE"]

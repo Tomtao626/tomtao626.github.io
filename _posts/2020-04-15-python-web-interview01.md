@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Python Web面试01"
-subtitle:    "pyweb"
+subtitle:    "PythonWeb"
 description: "面试"
 date:        2020-04-15
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["面试", "Web", "Tips"]
 categories:  ["IVIEW"]

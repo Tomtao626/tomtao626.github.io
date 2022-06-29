@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Python内置函数"
-subtitle:    "py基础"
+subtitle:    "Python基础"
 description: "内置用法"
 date:        2020-04-14
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["Collection", "函数式编程", "生成器"]
 categories:  ["PYTHON"]

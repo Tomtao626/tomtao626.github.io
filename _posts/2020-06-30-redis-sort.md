@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "Redis实现排行榜功能"
 subtitle:    "数据库基础"
 description: "redis排行榜"
 date:        2020-06-30
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["Set", "Tips"]
 categories:  ["DATABASE"]

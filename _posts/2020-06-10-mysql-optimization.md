@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "MySQL优化"
 subtitle:    "数据库优化"
-description: "mysql"
+description: "Mysql"
 date:        2020-06-10
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["MySQL", "Tips"]
 categories:  ["DATABASE"]

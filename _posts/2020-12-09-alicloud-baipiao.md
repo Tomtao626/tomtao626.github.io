@@ -1,9 +1,10 @@
 ---
+layout: mypost
 title:       "AliCloud-ECS白嫖"
 subtitle:    "互联网白嫖"
 description: "ali-ecs"
 date:        2020-12-09
-author:      "tomtao626"
+author:      "Tomtao626"
 image:       ""
 tags:        ["Cloud", "Tips"]
 categories:  ["LINUX"]
