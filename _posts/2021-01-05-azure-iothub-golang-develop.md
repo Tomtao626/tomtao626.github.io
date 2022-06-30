@@ -1113,8 +1113,8 @@ func DriectHandler(payload map[string]interface{}) (code int, response map[strin
 {
 	"methodName":"TestMethod",
 	"payload":{
-    "a": 3,
-    "b": 1.5,
+      "a": 3,
+      "b": 1.5,
   }
 }
  */
