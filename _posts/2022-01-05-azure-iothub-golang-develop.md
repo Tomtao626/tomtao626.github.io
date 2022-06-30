@@ -3,7 +3,7 @@ layout: mypost
 title:       "Azure IotHub Golang开发指北"
 subtitle:    "Azure IotHub"
 description: "Azure IotHub Golang开发指北"
-date:        2020-01-05
+date:        2022-01-05
 author:      "Tomtao626"
 image:       ""
 tags:        ["Cloud", "Tools", "Tips"]
@@ -652,7 +652,7 @@ func ParseResponseString(response *http.Response) (string, error) {
 func main() {
 	log.Fatal("GetRegInfoFromIot()----从IotHub获取设备注册信息")
 	baseUrl := fmt.Sprintf("https://%s", "global.azure-devices-provisioning.cn")
-	registrationId := "20210103device01"
+	registrationId := "20220103device01"
 	idScope := "0cn000346C6"
 	regBaseUrl := "%s/%s/registrations/%s?api-version=2021-06-01"
 	reqUrl := fmt.Sprintf(regBaseUrl, baseUrl, idScope, registrationId)
@@ -782,7 +782,7 @@ import (
 
 func main() {
 	dc, err := iotdevice.NewFromConnectionString(
-		iotmqtt.New(), "HostName=tomtao626.azure-devices.net;DeviceId=20210103device01;SharedAccessKey=9l9Cxfdsf5qOQCi8EsfsfUllaeXqcYVExi6+moh+wq/M0aTrIzI=",
+		iotmqtt.New(), "HostName=tomtao626.azure-devices.net;DeviceId=20220103device01;SharedAccessKey=9l9Cxfdsf5qOQCi8EsfsfUllaeXqcYVExi6+moh+wq/M0aTrIzI=",
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -925,7 +925,7 @@ var sc *iotdevice.Client
 func main() {
 	var err error
 	// connect_string
-	cs := "HostName=tomtao626.azure-devices.cn;DeviceId=20210103device01;SharedAccessKey=2poBlMHZSwpF2Jfh5CjMuNoGc6OzDEXy2mycGi1ze80="
+	cs := "HostName=tomtao626.azure-devices.cn;DeviceId=20220103device01;SharedAccessKey=2poBlMHZSwpF2Jfh5CjMuNoGc6OzDEXy2mycGi1ze80="
 	// Establish a connection and init mqtt through connect_string parsing
 	sc, err = iotdevice.NewFromConnectionString(
 		iotmqtt.New(), cs)
@@ -1092,7 +1092,7 @@ import (
 func main() {
 
 	c, err := iotdevice.NewFromConnectionString(
-		iotmqtt.New(), "HostName=tomtao626.azure-devices.cn;DeviceId=20210103device01;SharedAccessKey=3k/K7JPeXrG+abUKlDkJbBqaB1D1POdfgd74G/AqY4daC2hXMvdAl1nW2Yfr7UGNvba2HRNhlUi9egqUbj6Hgbc1dg==",
+		iotmqtt.New(), "HostName=tomtao626.azure-devices.cn;DeviceId=20220103device01;SharedAccessKey=3k/K7JPeXrG+abUKlDkJbBqaB1D1POdfgd74G/AqY4daC2hXMvdAl1nW2Yfr7UGNvba2HRNhlUi9egqUbj6Hgbc1dg==",
 	)
 	if err != nil {
 		log.Fatal(err)
