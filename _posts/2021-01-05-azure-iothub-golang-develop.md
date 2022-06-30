@@ -233,21 +233,21 @@ categories: [Cloud, Golang, Azure]
 
 #### 4.7.1-2 请求正文
 
-| Name	                       | Required	     | Type	                                                     | Description                                                                                                                                                                                                                                                                                    |
-|-----------------------------|---------------|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| attestation	                | True          | AttestationMechanism                                      | 设备使用的证明方法。                                                                                                                                                                                                                                                                                     |
-| registrationId	             | True          | string                                                    | 注册 ID 是小写的字母数字，并且可包含连字符。                                                                                                                                                                                                                                                                       |
-| allocationPolicy	           | 	             | enum: <br/>hashed <br/>geoLatency <br/>static <br/>custom | 此资源的分配策略。 此策略覆盖此单个注册组或注册组的租户级别分配策略。 可能的值包括 "哈希"：链接的 IoT 中心可能会将设备预配到设备 "geoLatency"：将设备预配到具有最低延迟的 IoT 中心。如果多个链接的 IoT 中心提供相同的最低延迟，则预配服务会在这些中心中对设备进行哈希处理： "静态"：注册列表中所需 IoT 中心的规范优先于服务级别分配策略，"自定义"：根据自己的自定义逻辑将设备预配到 IoT 中心。 预配服务将有关设备的信息传递给逻辑，逻辑返回所需的 IoT 中心以及所需的初始配置。 建议使用 Azure Functions 来托管逻辑。 |
-| capabilities	               | 	             | DeviceCapabilities                                        | 设备的功能。                                                                                                                                                                                                                                                                                         |
-| customAllocationDefinition  | 		            | CustomAllocationDefinition                                | 这会告知 DPS 使用自定义分配时要调用的 webhook。                                                                                                                                                                                                                                                                 |
-| deviceId	                   | 	             | string                                                    | 所需的 IoT 中心设备 ID (可选) 。                                                                                                                                                                                                                                                                         |
-| etag	                       | 	             | string                                                    | 与资源关联的实体标记。                                                                                                                                                                                                                                                                                    |
-| initialTwin		               |               | InitialTwin                                               | 初始设备克隆。                                                                                                                                                                                                                                                                                        |
-| iotHubHostName		            |               | string                                                    | Iot 中心主机名。                                                                                                                                                                                                                                                                                     |
-| iotHubs		                   |               | string[]                                                  | IoT 中心主机名，可以将此资源中 () 的设备分配到该列表。 必须是 IoT 中心的租户级别列表的子集。                                                                                                                                                                                                                                          |
-| optionalDeviceInformation		 |               | TwinCollection                                            | 可选的设备信息。                                                                                                                                                                                                                                                                                       |
-| provisioningStatus		        |               | enum: <br/>enabled <br/>disabled                          | 预配状态。                                                                                                                                                                                                                                                                                          |
-| reprovisionPolicy		         |               | ReprovisionPolicy                                         | 将设备重新预配到 IoT 中心时的行为。                                                                                                                                                                                                                                                                           |
+| Name	                               | Required	            | Type	                                                                                       | Description                                                                                                                                                                                                                                                                                    |
+|-------------------------------------|----------------------|---------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| attestation	                        | True                 | AttestationMechanism                                                                        | 设备使用的证明方法。                                                                                                                                                                                                                                                                                     |
+| registrationId	                     | True                 | string                                                                                      | 注册 ID 是小写的字母数字，并且可包含连字符。                                                                                                                                                                                                                                                                       |
+| allocationPolicy	                   | 	                    | enum: <br/>hashed <br/>geoLatency <br/>static <br/>custom                                   | 此资源的分配策略。 此策略覆盖此单个注册组或注册组的租户级别分配策略。 可能的值包括 "哈希"：链接的 IoT 中心可能会将设备预配到设备 "geoLatency"：将设备预配到具有最低延迟的 IoT 中心。如果多个链接的 IoT 中心提供相同的最低延迟，则预配服务会在这些中心中对设备进行哈希处理： "静态"：注册列表中所需 IoT 中心的规范优先于服务级别分配策略，"自定义"：根据自己的自定义逻辑将设备预配到 IoT 中心。 预配服务将有关设备的信息传递给逻辑，逻辑返回所需的 IoT 中心以及所需的初始配置。 建议使用 Azure Functions 来托管逻辑。 |
+| capabilities	                       | 	                    | DeviceCapabilities                                                                          | 设备的功能。                                                                                                                                                                                                                                                                                         |
+| customAllocationDefinition          | 		                   | CustomAllocationDefinition                                                                  | 这会告知 DPS 使用自定义分配时要调用的 webhook。                                                                                                                                                                                                                                                                 |
+| deviceId	                           | 	                    | string                                                                                      | 所需的 IoT 中心设备 ID (可选) 。                                                                                                                                                                                                                                                                         |
+| etag	                               | 	                    | string                                                                                      | 与资源关联的实体标记。                                                                                                                                                                                                                                                                                    |
+| initialTwin		                       |                      | InitialTwin                                                                                 | 初始设备克隆。                                                                                                                                                                                                                                                                                        |
+| iotHubHostName		                    |                      | string                                                                                      | Iot 中心主机名。                                                                                                                                                                                                                                                                                     |
+| iotHubs		                           |                      | string[]                                                                                    | IoT 中心主机名，可以将此资源中 () 的设备分配到该列表。 必须是 IoT 中心的租户级别列表的子集。                                                                                                                                                                                                                                          |
+| optionalDeviceInformation		         |                      | TwinCollection                                                                              | 可选的设备信息。                                                                                                                                                                                                                                                                                       |
+| provisioningStatus		                |                      | enum: <br/>enabled <br/>disabled                                                            | 预配状态。                                                                                                                                                                                                                                                                                          |
+| reprovisionPolicy		                 |                      | ReprovisionPolicy                                                                           | 将设备重新预配到 IoT 中心时的行为。                                                                                                                                                                                                                                                                           |
 
 #### 4.7.1-3 代码示例
 
@@ -702,22 +702,22 @@ func main() {
 
 > + API接口调用成功会返回设备对应的：
 
-| Name	                  | Type	                                                                        | Description                      |
-|------------------------|------------------------------------------------------------------------------|----------------------------------|
-| assignedHub            | string                                                                       | 已分配Azure IoT中心。                  |
-| createdDateTimeUtc     | string                                                                       | 注册创建日期时间 (UTC) 。                 |
-| deviceId               | string                                                                       | 设备 ID。                           |
-| errorCode              | integer                                                                      | 错误代码。                            |
-| errorMessage           | string                                                                       | 错误消息。                            |
-| etag                   | string                                                                       | 与资源关联的实体标记。                      |
-| lastUpdatedDateTimeUtc | string                                                                       | 上次更新的日期时间 (UTC) 。                |
-| payload                | object                                                                       | 从 Webhook 返回到设备的自定义分配有效负载。       |
-| registrationId         | string                                                                       | 注册 ID 是小写的字母数字，并且可包含连字符。         |
-| status	                | enum: <br/>assigned <br/>assigning <br/>disabled <br/>failed <br/>unassigned | 注册状态。                            |
-| substatus              | enum: <br/>deviceDataMigrated <br/>deviceDataReset <br/>initialAssignment    | reprovisionedToInitialAssignment |"已分配"设备的子状态。 可能的值包括 -"initialAssignment"：设备已首次分配到 IoT 中心，"deviceDataMigrated"：设备已分配到其他 IoT 中心，其设备数据从以前分配的 IoT 中心迁移。 设备数据已从以前分配的 IoT 中心"deviceDataReset"中删除：设备已分配到其他 IoT 中心，其设备数据已从注册中存储的初始状态填充。 设备数据已从以前分配的 IoT 中心"reprovisionedToInitialAssignment"中删除：设备已重新预配到以前分配的 IoT 中心。|
-| symmetricKey           | SymmetricKeyRegistrationResult                                               | 使用 SymmetricKey 证明时返回的注册结果。      |
-| tpm                    | TpmRegistrationResult                                                        | 使用 TPM 证明时返回的注册结果。               |
-| x509                   | X509RegistrationResult                                                       | 使用 X509 证明时返回的注册结果。              |
+| Name	                                                          | Type	                                                                                                                                                    | Description                      |
+|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
+| assignedHub                                                    | string                                                                                                                                                   | 已分配Azure IoT中心。                  |
+| createdDateTimeUtc                                             | string                                                                                                                                                   | 注册创建日期时间 (UTC) 。                 |
+| deviceId                                                       | string                                                                                                                                                   | 设备 ID。                           |
+| errorCode                                                      | integer                                                                                                                                                  | 错误代码。                            |
+| errorMessage                                                   | string                                                                                                                                                   | 错误消息。                            |
+| etag                                                           | string                                                                                                                                                   | 与资源关联的实体标记。                      |
+| lastUpdatedDateTimeUtc                                         | string                                                                                                                                                   | 上次更新的日期时间 (UTC) 。                |
+| payload                                                        | object                                                                                                                                                   | 从 Webhook 返回到设备的自定义分配有效负载。       |
+| registrationId                                                 | string                                                                                                                                                   | 注册 ID 是小写的字母数字，并且可包含连字符。         |
+| status	                                                        | enum: <br/>assigned <br/>assigning <br/>disabled <br/>failed <br/>unassigned                                                                             | 注册状态。                            |
+| substatus                                                      | enum: <br/>deviceDataMigrated <br/>deviceDataReset <br/>initialAssignment                                                                                | reprovisionedToInitialAssignment |"已分配"设备的子状态。 可能的值包括 -"initialAssignment"：设备已首次分配到 IoT 中心，"deviceDataMigrated"：设备已分配到其他 IoT 中心，其设备数据从以前分配的 IoT 中心迁移。 设备数据已从以前分配的 IoT 中心"deviceDataReset"中删除：设备已分配到其他 IoT 中心，其设备数据已从注册中存储的初始状态填充。 设备数据已从以前分配的 IoT 中心"reprovisionedToInitialAssignment"中删除：设备已重新预配到以前分配的 IoT 中心。|
+| symmetricKey                                                   | SymmetricKeyRegistrationResult                                                                                                                           | 使用 SymmetricKey 证明时返回的注册结果。      |
+| tpm                                                            | TpmRegistrationResult                                                                                                                                    | 使用 TPM 证明时返回的注册结果。               |
+| x509                                                           | X509RegistrationResult                                                                                                                                   | 使用 X509 证明时返回的注册结果。              |
 
 ```json
 {
@@ -1146,9 +1146,9 @@ func DriectHandler(payload map[string]interface{}) (code int, response map[strin
 
 ```json
 {
-"status" : 200,
-"payload" : {
-  "result": 4.5
+  "status": 200,
+  "payload": {
+    "result": 4.5
   }
 }
 ```
@@ -1296,7 +1296,6 @@ func main() {
 ## 9.4 后端操作设备孪生
 
 > + 按 `ID` 检索设备孪生。 此操作返回设备孪生文档，包括标记、所需的系统属性和报告的系统属性。
-
 > + 部分更新设备孪生。 解决方案后端可以使用此操作部分更新设备孪生中的标记或所需属性。 部分更新以 `JSON` 文档的形式表示，可添加或更新任何属性。 将删除设置为 `null` 的属性。 
 > + 以下示例创建值为 `{"newProperty": "newValue"}` 的新所需属性，将现有值 `existingProperty` 覆盖为 `otherNewValue`，并删除 `otherOldProperty`。 不会对现有的所需属性或标记进行其他任何更改
 
@@ -1357,9 +1356,9 @@ func main() {
 # 10 设备上传文件
 
 > + `IoT` 中心通过在预先配置了该中心的 `blob` 容器和 `Azure` 存储帐户的每次上传基础上，为连接设备提供共享访问签名 `(SAS) URI`，来帮助从设备上传文件。 使用 `IoT` 中心进行文件上传有三个部分：
->  + 在 `IoT` 中心预配置 `Azure` 存储帐户和 `blob` 容器、
->  + 从设备上传文件，
->  + 以及（可选）就完成文件上传通知后端服务。
+>   + 在 `IoT` 中心预配置 `Azure` 存储帐户和 `blob` 容器、
+>   + 从设备上传文件，
+>   + 以及（可选）就完成文件上传通知后端服务。
 
 ## 10.1 设备操作步骤:
 
@@ -1430,7 +1429,7 @@ hello world
 
 ### 10.2.3 设备：通知 `IoT` 中心已完成文件上传
 
-+ > 完成文件上传时，设备会调用 [Update File Upload Status REST API(此方法用于通知 IoT 中心已完成的文件上传)](https://docs.microsoft.com/zh-CN/rest/api/iothub/device/update-file-upload-status) 或其中一个设备 `SDK` 中的等效 `API`。 无论上传是成功还是失败，设备都应向 IoT 中心更新文件上传状态。
+> + 完成文件上传时，设备会调用 [Update File Upload Status REST API(此方法用于通知 IoT 中心已完成的文件上传)](https://docs.microsoft.com/zh-CN/rest/api/iothub/device/update-file-upload-status) 或其中一个设备 `SDK` 中的等效 `API`。 无论上传是成功还是失败，设备都应向 IoT 中心更新文件上传状态。
 > + 支持的协议：`HTTPS`
 > + 终结点：`{iot hub}.azure-devices.net/devices/{deviceId}/files/notifications`
 > + 方法：`POST`
@@ -1460,8 +1459,8 @@ hello world
 
 ### 10.2.4 服务：文件上传通知
 
-+ > 如果在 `IoT` 中心启用了文件上传通知，则当从设备接收到文件上传完成的通知时，它会为后端服务生成通知消息。 `IoT` 中心通过面向服务的终结点传送这些文件上传通知。 文件上传通知的接收语义与云到设备消息的接收语义相同，并且具有相同的[消息生命周期](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-devguide-messages-c2d#the-cloud-to-device-message-life-cycle)。 服务 `SDK` 公开 `API` 来处理文件上传通知。
-
+> + 如果在 `IoT` 中心启用了文件上传通知，则当从设备接收到文件上传完成的通知时，它会为后端服务生成通知消息。 `IoT` 中心通过面向服务的终结点传送这些文件上传通知。 
+> + 文件上传通知的接收语义与云到设备消息的接收语义相同，并且具有相同的[消息生命周期](https://docs.microsoft.com/zh-cn/azure/iot-hub/iot-hub-devguide-messages-c2d#the-cloud-to-device-message-life-cycle)。 服务 `SDK` 公开 `API` 来处理文件上传通知。
 > + 支持的协议 `AMQP`、`AMQP-WS`
 > + 终结点：`{iot hub}.azure-devices.net/messages/servicebound/fileuploadnotifications`
 > + 方法 `GET`
