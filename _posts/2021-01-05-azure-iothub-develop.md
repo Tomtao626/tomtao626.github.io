@@ -1,16 +1,16 @@
 ---
 layout: mypost
-title:       "Azure IotHub 开发指南"
+title:       "Azure IotHub Golang开发指北"
 subtitle:    "Azure IotHub"
-description: "Azure IotHub 开发指南"
+description: "Azure IotHub Golang开发指北"
 date:        2022-01-05
 author:      "Tomtao626"
 image:       ""
 tags:        ["Cloud", "Tools", "Tips"]
-categories:  ["Cloud"]
+categories:  ["Cloud", "Golang]
 ---
 
-# 1 Azure IotHub 配置
+# 1-Azure IotHub 开发配置
 
 ## 1.1 在Azure Portal上创建Azure IotHub
 
