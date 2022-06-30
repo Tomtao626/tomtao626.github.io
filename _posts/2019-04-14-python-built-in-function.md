@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Python内置函数"
-subtitle:    "Python基础"
-description: "内置用法"
-date:        2019-04-14
-author:      "Tomtao626"
-image:       ""
-tags:        ["Collection", "函数式编程", "生成器"]
-categories:  ["PYTHON"]
+title: Python内置函数
+categories: [Python]
 ---
 
 # 如何统计一篇文章中出现频率最高的 5 个单词？ Counter 

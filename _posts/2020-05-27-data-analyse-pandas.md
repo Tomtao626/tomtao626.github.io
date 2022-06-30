@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Python Pandas使用"
-subtitle:    "数据分析"
-description: "Pandas使用"
-date:        2020-05-27
-author:      "Tomtao626"
-image:       ""
-tags:        ["数据分析", "Pandas"]
-categories:  ["PYTHON"]
+title: Python Pandas使用
+categories: [Python, Pandas]
 ---
 
 # 数据分析介绍

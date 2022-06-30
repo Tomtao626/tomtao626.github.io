@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Python中的collections模块"
-subtitle:    "Python基础"
-description: "collections模块"
-date:        2019-05-16
-author:      "Tomtao626"
-image:       ""
-tags:        ["Collection", "数据结构", "Tips"]
-categories:  ["PYTHON"]
+title: Python中的collections模块
+categories: [Python]
 ---
 
 Python作为一个“内置电池”的编程语言，标准库里面拥有非常多好用的模块。比如今天想给大家 介绍的 collections 就是一个非常好的例子。

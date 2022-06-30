@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "AliCloud-ECS白嫖"
-subtitle:    "互联网白嫖"
-description: "Ali-Ecs"
-date:        2020-12-09
-author:      "Tomtao626"
-image:       ""
-tags:        ["Cloud", "Tips"]
-categories:  ["LINUX"]
+title: AliCloud-ECS白嫖
+categories: [Linux, Cloud]
 ---
 
 ## 1 前期准备

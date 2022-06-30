@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Golang中使用MongoDB详解"
-subtitle:    "Golang-MongoDB使用"
-description: "Golang-MongoDB"
-date:        2020-08-09
-author:      "Tomtao626"
-image:       ""
-tags:        ["MongoDB", "Tips"]
-categories:  ["GOLANG"]
+title: Golang中使用MongoDB详解
+categories:  [Golang, MongoDB]
 ---
 
 > 支持库用的mgo，当然更推荐mongo-go-driver/qmgo

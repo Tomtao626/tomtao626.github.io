@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Python招聘需求和技能体系"
-subtitle:    "Python面试"
-description: "Python招聘需求和技能体系"
-date:        2020-12-19
-author:      "Tomtao626"
-image:       ""
-tags:        ["Other", "Tips"]
-categories:  ["PYTHON"]
+title: Python招聘需求和技能体系
+categories: [Python, 面试]
 ---
 
 # Python招聘需求与技能体系

@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Python Web面试01"
-subtitle:    "PythonWeb"
-description: "面试"
-date:        2020-04-15
-author:      "Tomtao626"
-image:       ""
-tags:        ["面试", "Web", "Tips"]
-categories:  ["IVIEW"]
+title: Python Web面试01
+categories: [面试, Python]
 ---
 
 # http/http.2协议原理

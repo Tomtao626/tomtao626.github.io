@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Python编码规范"
-subtitle:    "Python基础"
-description: "编码规范"
-date:        2019-04-13
-author:      "Tomtao626"
-image:       ""
-tags:        ["编码规范", "注解", "Tips"]
-categories:  ["PYTHON"]
+title: Python编码规范
+categories: [Python]
 ---
 
 # python中的DocStrings（解释文档）有什么作用

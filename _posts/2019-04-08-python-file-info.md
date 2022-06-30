@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Python文件操作"
-subtitle:    "Python基础"
-description: "文件操作"
-date:        2019-04-08
-author:      "Tomtao626"
-image:       ""
-tags:        ["OS", "Glob", "Shutil", "Zipfile"]
-categories:  ["PYTHON"]
+title: Python文件操作
+categories: [Python]
 ---
 
 # x="abc",y="def",z=["d","e","f"]，分别求出 x.join(y) 和 x.join(z) 返回的结果

@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "MySQL优化"
-subtitle:    "数据库优化"
-description: "Mysql"
-date:        2020-06-10
-author:      "Tomtao626"
-image:       ""
-tags:        ["MySQL", "Tips"]
-categories:  ["DATABASE"]
+title: MySQL优化
+categories: [DataBase, MySQL]
 ---
 
 ## explain返回列简介

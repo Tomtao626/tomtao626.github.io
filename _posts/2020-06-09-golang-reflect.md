@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Golang中的反射使用参考"
-subtitle:    "Golang
-description: "Golang-反射"
-date:        2020-06-09
-author:      "Tomtao626"
-image:       ""
-tags:        ["反射", "Tips"]
-categories:  ["GOLANG"]
+title: Golang中的反射使用参考
+categories:  [Golang]
 ---
 
 # 1-通过反射获取反射值对象的类型和种类

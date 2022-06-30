@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "MongoDB系列-安装"
-subtitle:    "数据库基础"
-description: "MongoDB"
-date:        2020-06-01
-author:      "Tomtao626"
-image:       ""
-tags:        ["Linux", "MongoDB"]
-categories:  ["DATABASE"]
+title: MongoDB系列-安装
+categories: [DataBase, MongoDB]
 ---
 
 # 安装

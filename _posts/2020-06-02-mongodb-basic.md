@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "MongoDB系列-操作"
-subtitle:    "数据库基础"
-description: "MongoDB"
-date:        2020-06-02
-author:      "Tomtao626"
-image:       ""
-tags:        ["Linux", "MongoDB"]
-categories:  ["DATABASE"]
+title: MongoDB系列-操作
+categories: [DataBase, MongoDB]
 ---
 
 ## 数据库相关概念

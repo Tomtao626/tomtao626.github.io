@@ -1,13 +1,7 @@
 ---
 layout: mypost
-title:       "Python Tornado异步原理"
-subtitle:    "Python框架"
-description: "Tornado异步原理"
-date:        2019-08-19
-author:      "Tomtao626"
-image:       ""
-tags:        ["Tornado", "异步", "Web"]
-categories:  ["PYTHON"]
+title: Python Tornado异步原理
+categories: [Python, Tornado]
 ---
 
 我们知道Tornado 优秀的大并发处理能力得益于它的 web server 从底层开始就自己实现了一整套基于 epoll 的单线程异步架构，其他 web 框架比如Django或者Flask的自带 server 基本是基于 wsgi 写的简单服务器，并没有自己实现底层结构。而tornado.ioloop 就是 tornado web server 最底层的实现。
