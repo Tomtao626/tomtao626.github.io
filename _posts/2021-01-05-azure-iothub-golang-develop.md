@@ -12,18 +12,18 @@ categories: [Cloud, Golang, Azure]
 
 > + 进入`iothub`配置界面，选择左侧的消息路由，点击新增(说直白点就是，设备上报的数据直接存储在service bus中)
 > + 设置名称、终结点、消息来源默认、剩下选项默认
-+ > a.新增一个终结点-service bus (queen/topic) endpoint类型
-  > + 选择不同的endpoint类型，将会把数据持久化到不同的节点里面
-  > + 消息终结点有`Event hubs`/`service bus queue`/`service bus topic`/`Storage`四种类型,这种我们使用`service bus topic`
-  > + 这里需要区分下 `queen`和`topic`，`queen`是一个队列，`topic`是一个主题
-  > + 队列为一个或多个竞争使用方提供先入先出 (`FIFO`) 消息传递方式。 也就是说，接收方通常会按照消息添加到队列中的顺序来接收并处理消息。 并且每条消息仅由一个消息使用方接收并处理。 使用队列的主要优点是实现应用程序组件的临时分离。 换句话说，创建方（发送方）和使用方（接收方）不必同时发送和接收消息。 这是因为消息已持久存储在队列中。 此外，创建方不必等待使用方的答复即可继续处理并发送更多消息。
-  > + 队列允许单个使用方处理消息。 与队列不同，主题和订阅以“发布和订阅”模式提供一对多的通信形式。 这对于扩展到大量接收方而言十分有用。 每个发布的消息均可用于向该主题注册的每个订阅。 发布方将消息发送到主题，一个或多个订阅服务器将接收该消息的副本，具体取决于对这些订阅设置的筛选规则。 此订阅可以使用其他筛选器来限制其想要接收的消息。 发布方将消息发送到主题的方式与将消息发送到队列的方式相同。 但使用方不会直接从主题接收消息。 相反，使用方从该主题的订阅接收消息。 主题订阅类似于接收发送至该主题的消息副本的虚拟队列。 使用方从订阅接收消息的方式与从队列接收消息的方式相同。
-+ > b.需要设置endpoint名称，添加与此IoT中心共享订阅的已存在的service bus (queen/topic)，若没有，就需要新建service bus和对应的topic（见在 [azure service bus 配置](#1)），其他内容默认。
+>   + a.新增一个终结点-service bus (queen/topic) endpoint类型
+>     + 选择不同的endpoint类型，将会把数据持久化到不同的节点里面
+>     + 消息终结点有`Event hubs`/`service bus queue`/`service bus topic`/`Storage`四种类型,这种我们使用`service bus topic`
+>     + 这里需要区分下 `queen`和`topic`，`queen`是一个队列，`topic`是一个主题
+>     + 队列为一个或多个竞争使用方提供先入先出 (`FIFO`) 消息传递方式。 也就是说，接收方通常会按照消息添加到队列中的顺序来接收并处理消息。 并且每条消息仅由一个消息使用方接收并处理。 使用队列的主要优点是实现应用程序组件的临时分离。 换句话说，创建方（发送方）和使用方（接收方）不必同时发送和接收消息。 这是因为消息已持久存储在队列中。 此外，创建方不必等待使用方的答复即可继续处理并发送更多消息。
+>     + 队列允许单个使用方处理消息。 与队列不同，主题和订阅以“发布和订阅”模式提供一对多的通信形式。 这对于扩展到大量接收方而言十分有用。 每个发布的消息均可用于向该主题注册的每个订阅。 发布方将消息发送到主题，一个或多个订阅服务器将接收该消息的副本，具体取决于对这些订阅设置的筛选规则。 此订阅可以使用其他筛选器来限制其想要接收的消息。 发布方将消息发送到主题的方式与将消息发送到队列的方式相同。 但使用方不会直接从主题接收消息。 相反，使用方从该主题的订阅接收消息。 主题订阅类似于接收发送至该主题的消息副本的虚拟队列。 使用方从订阅接收消息的方式与从队列接收消息的方式相同。
+>   + b.需要设置endpoint名称，添加与此IoT中心共享订阅的已存在的service bus (queen/topic)，若没有，就需要新建service bus和对应的topic，其他内容默认。
 > + 点击创建
 
 ## 1.3 在设备中配置终结点和消息路由
 
-# <div id="1">2.azure service bus 配置</div>
+# 2.Azure IotHub Portal 配置
 
 ## 2.1 在 Azure 门户中创建命名空间
 
@@ -94,6 +94,7 @@ categories: [Cloud, Golang, Azure]
 ## 3.2 后端服务配置设备流程
 
 ![](https://docs.microsoft.com/zh-cn/azure/iot-hub/media/tutorial-device-twins/devicetwins.png)
+
 > + 创建 IoT 中心并将测试设备添加到标识注册表。(设备注册到IotHub)
 > + 使用所需属性将状态信息发送到模拟设备。(设备控制)
 > + 使用报告属性从模拟设备接收状态信息。(服务接收)
@@ -107,6 +108,7 @@ categories: [Cloud, Golang, Azure]
 ## 4.2 预配流程
 
 > ![](https://docs.microsoft.com/zh-cn/azure/iot-dps/media/about-iot-dps/dps-provisioning-flow.png)
+
 > + 1.设备制造商将设备注册信息添加到 Azure 门户中的注册列表。
 > + 2.设备联系工厂中设置的 DPS 终结点。 设备将标识信息传递给 DPS 来证明其身份。
 > + 3.DPS 通过使用 nonce 质询（受信任的平台模块）或标准 X.509 验证 (X.509) 根据注册列表项来验证注册 ID 和密钥，从而验证设备的标识。
@@ -118,32 +120,33 @@ categories: [Cloud, Golang, Azure]
 
 ## 4.3 设备预配服务的功能
 
-> DPS 具有许多功能，非常适合用于预配设备。
-> + 对基于 X.509 和 TPM 的标识 的安全证明支持。
-> + 注册列表，其中包含可能在某一时刻注册的设备/设备组的完整记录 。 注册列表包含有关设备注册后所需的设备配置信息，并可随时更新。
-> + 多个分配策略，用于根据自己的需要控制 DPS 向 IoT 中心分配设备的方式：通过注册列表控制最小延迟、平均加权分布（默认值）和静态配置。 延迟是使用与流量管理器相同的方法确定的。
-> + 监视和诊断日志记录，用于确保一切都正常工作。
-> + 多中心支持，允许 DPS 将设备分配给多个 IoT 中心。 DPS 可以跨多个 Azure 订阅来与中心通信。
-> + 跨区域支持使 DPS 能够将设备分配到其他区域的 IoT 中心。
-> + 静态数据加密允许使用 256 位 AES 加密（可用的最强大的分组加密法之一，并且符合 FIPS 140-2）透明地加密和解密 DPS 中的数据。
+> + DPS 具有许多功能，非常适合用于预配设备。
+>   + 对基于 X.509 和 TPM 的标识 的安全证明支持。
+>   + 注册列表，其中包含可能在某一时刻注册的设备/设备组的完整记录 。 注册列表包含有关设备注册后所需的设备配置信息，并可随时更新。
+>   + 多个分配策略，用于根据自己的需要控制 DPS 向 IoT 中心分配设备的方式：通过注册列表控制最小延迟、平均加权分布（默认值）和静态配置。 延迟是使用与流量管理器相同的方法确定的。
+>   + 监视和诊断日志记录，用于确保一切都正常工作。
+>   + 多中心支持，允许 DPS 将设备分配给多个 IoT 中心。 DPS 可以跨多个 Azure 订阅来与中心通信。
+>   + 跨区域支持使 DPS 能够将设备分配到其他区域的 IoT 中心。
+>   + 静态数据加密允许使用 256 位 AES 加密（可用的最强大的分组加密法之一，并且符合 FIPS 140-2）透明地加密和解密 DPS 中的数据。
+
 可以通过查看 [DPS 术语](https://docs.microsoft.com/zh-cn/azure/iot-dps/concepts-service)主题以及同一部分的其他概念性主题来详细了解设备预配中涉及的概念和功能。
 
 ## 4.4 跨平台支持
 
->与所有 Azure IoT 服务一样，DPS 可以在各种操作系统上跨平台运行。 Azure 采用各种语言提供了开放源 SDK，以便于连接设备并管理服务。 DPS 支持使用以下协议来连接设备：
-> + HTTPS
-> + AMQP
-> + 基于 Web 套接字的 AMQP
-> + MQTT
-> + 基于 Web 套接字的 MQTT
+> + 与所有 Azure IoT 服务一样，DPS 可以在各种操作系统上跨平台运行。 Azure 采用各种语言提供了开放源 SDK，以便于连接设备并管理服务。 DPS 支持使用以下协议来连接设备：
+>   + HTTPS
+>   + AMQP
+>   + 基于 Web 套接字的 AMQP
+>   + MQTT
+>   + 基于 Web 套接字的 MQTT
 
 > DPS 仅支持使用 HTTPS 连接来执行服务操作。
 
 ## 4.5 配额和限制
 
-> 每个 Azure 订阅附带默认的配额限制，这些限制可能影响 IoT 解决方案的范围。 每个订阅的当前限制是每订阅 10 个设备预配服务。
+> + 每个 Azure 订阅附带默认的配额限制，这些限制可能影响 IoT 解决方案的范围。 每个订阅的当前限制是每订阅 10 个设备预配服务。
 
-> 适用于 Azure IoT 中心设备预配服务资源的限制。
+### 4.5.1 适用于 Azure IoT 中心设备预配服务资源的限制。
 
 | 资源	                   | 限制         | 	可调？ |
 |-----------------------|------------|------|
@@ -155,8 +158,8 @@ categories: [Cloud, Golang, Azure]
 | 最大 CA 数               | 	25	       | 否    |
 | 链接的 IoT 中心的最大数量       | 	50        | 	否   |
 | 消息的最大大小	              | 96 KB      | 	否   |
-
-> 设备预配服务具有以下速率限制。
+ 
+### 4.5.2 设备预配服务具有以下速率限制。
 
 | 费率	         | 每单位值       | 可调？ |
 |-------------|------------|-----|
@@ -230,21 +233,21 @@ categories: [Cloud, Golang, Azure]
 
 #### 4.7.1-2 请求正文
 
-| Name	                       | Required	 | Type	                                                     | Description                                                                                                                                                                                                                                                                                    |
-|-----------------------------|-----------|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| attestation	                | True      | AttestationMechanism                                      | 设备使用的证明方法。                                                                                                                                                                                                                                                                                     |
-| registrationId	             | True      | string                                                    | 注册 ID 是小写的字母数字，并且可包含连字符。                                                                                                                                                                                                                                                                       |
-| allocationPolicy	           | 	         | enum: <br/>hashed <br/>geoLatency <br/>static <br/>custom | 此资源的分配策略。 此策略覆盖此单个注册组或注册组的租户级别分配策略。 可能的值包括 "哈希"：链接的 IoT 中心可能会将设备预配到设备 "geoLatency"：将设备预配到具有最低延迟的 IoT 中心。如果多个链接的 IoT 中心提供相同的最低延迟，则预配服务会在这些中心中对设备进行哈希处理： "静态"：注册列表中所需 IoT 中心的规范优先于服务级别分配策略，"自定义"：根据自己的自定义逻辑将设备预配到 IoT 中心。 预配服务将有关设备的信息传递给逻辑，逻辑返回所需的 IoT 中心以及所需的初始配置。 建议使用 Azure Functions 来托管逻辑。 |
-| capabilities	               | 	         | DeviceCapabilities                                        | 设备的功能。                                                                                                                                                                                                                                                                                         |
-| customAllocationDefinition  | 		        | CustomAllocationDefinition                                | 这会告知 DPS 使用自定义分配时要调用的 webhook。                                                                                                                                                                                                                                                                 |
-| deviceId	                   | 	         | string                                                    | 所需的 IoT 中心设备 ID (可选) 。                                                                                                                                                                                                                                                                         |
-| etag	                       | 	         | string                                                    | 与资源关联的实体标记。                                                                                                                                                                                                                                                                                    |
-| initialTwin		               |           | InitialTwin                                               | 初始设备克隆。                                                                                                                                                                                                                                                                                        |
-| iotHubHostName		            |           | string                                                    | Iot 中心主机名。                                                                                                                                                                                                                                                                                     |
-| iotHubs		                   |           | string[]                                                  | IoT 中心主机名，可以将此资源中 () 的设备分配到该列表。 必须是 IoT 中心的租户级别列表的子集。                                                                                                                                                                                                                                          |
-| optionalDeviceInformation		 |           | TwinCollection                                            | 可选的设备信息。                                                                                                                                                                                                                                                                                       |
-| provisioningStatus		        |           | enum: <br/>enabled <br/>disabled                          | 预配状态。                                                                                                                                                                                                                                                                                          |
-| reprovisionPolicy		         |           | ReprovisionPolicy                                         | 将设备重新预配到 IoT 中心时的行为。                                                                                                                                                                                                                                                                           |
+| Name	                       | Required	     | Type	                                                     | Description                                                                                                                                                                                                                                                                                    |
+|-----------------------------|---------------|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| attestation	                | True          | AttestationMechanism                                      | 设备使用的证明方法。                                                                                                                                                                                                                                                                                     |
+| registrationId	             | True          | string                                                    | 注册 ID 是小写的字母数字，并且可包含连字符。                                                                                                                                                                                                                                                                       |
+| allocationPolicy	           | 	             | enum: <br/>hashed <br/>geoLatency <br/>static <br/>custom | 此资源的分配策略。 此策略覆盖此单个注册组或注册组的租户级别分配策略。 可能的值包括 "哈希"：链接的 IoT 中心可能会将设备预配到设备 "geoLatency"：将设备预配到具有最低延迟的 IoT 中心。如果多个链接的 IoT 中心提供相同的最低延迟，则预配服务会在这些中心中对设备进行哈希处理： "静态"：注册列表中所需 IoT 中心的规范优先于服务级别分配策略，"自定义"：根据自己的自定义逻辑将设备预配到 IoT 中心。 预配服务将有关设备的信息传递给逻辑，逻辑返回所需的 IoT 中心以及所需的初始配置。 建议使用 Azure Functions 来托管逻辑。 |
+| capabilities	               | 	             | DeviceCapabilities                                        | 设备的功能。                                                                                                                                                                                                                                                                                         |
+| customAllocationDefinition  | 		            | CustomAllocationDefinition                                | 这会告知 DPS 使用自定义分配时要调用的 webhook。                                                                                                                                                                                                                                                                 |
+| deviceId	                   | 	             | string                                                    | 所需的 IoT 中心设备 ID (可选) 。                                                                                                                                                                                                                                                                         |
+| etag	                       | 	             | string                                                    | 与资源关联的实体标记。                                                                                                                                                                                                                                                                                    |
+| initialTwin		               |               | InitialTwin                                               | 初始设备克隆。                                                                                                                                                                                                                                                                                        |
+| iotHubHostName		            |               | string                                                    | Iot 中心主机名。                                                                                                                                                                                                                                                                                     |
+| iotHubs		                   |               | string[]                                                  | IoT 中心主机名，可以将此资源中 () 的设备分配到该列表。 必须是 IoT 中心的租户级别列表的子集。                                                                                                                                                                                                                                          |
+| optionalDeviceInformation		 |               | TwinCollection                                            | 可选的设备信息。                                                                                                                                                                                                                                                                                       |
+| provisioningStatus		        |               | enum: <br/>enabled <br/>disabled                          | 预配状态。                                                                                                                                                                                                                                                                                          |
+| reprovisionPolicy		         |               | ReprovisionPolicy                                         | 将设备重新预配到 IoT 中心时的行为。                                                                                                                                                                                                                                                                           |
 
 #### 4.7.1-3 代码示例
 
@@ -393,7 +396,7 @@ func main() {
 >   + API Version：2021-06-01
 >   + Method：PUT
 >   + RequestHeader：
-      >     + Content-Type:application/json
+>     + Content-Type:application/json
 >     + Authorization:""
 
 #### 4.7.2-2 URI 参数
@@ -405,6 +408,7 @@ func main() {
 | api-version     | 	query | 	True    | string | 要用于请求的 API 版本。 支持的版本包括：2021-06-01 |
 
 #### 4.7.2-3 请求正文
+
 | Name	          | Type	          | Description                                                            |
 |----------------|----------------|------------------------------------------------------------------------|
 | payload        | object         | 自定义分配有效负载。                                                             |
@@ -569,6 +573,7 @@ func main() {
 | payload	       | object         | 自定义分配有效负载。               |
 | registrationId | string         | 注册 ID 是小写的字母数字，并且可包含连字符。 |
 | tpm	           | TpmAttestation | Tpm。                     |
+
 #### 4.7.3-4 代码示例
 
 ```go
@@ -751,6 +756,7 @@ func main() {
 | 协议	    | 在所有协议上可用。	                             | 使用 MQTT 或 AMQP 时可用。	                                      | 在使用任何协议时可用，但设备上必须具备 HTTPS。  |应用程序可能需要同时将信息作为遥测时序或警报发送，并且使其在设备孪生中可用。 在这种情况下，可以选择以下选项之一：|
 
 ## 5.3 备应用发送一条设备到云消息并报告属性更改。
+
 > + 解决方案后端在收到消息时可将信息存储在设备孪生的标记中。
 > + 由于设备到云消息允许的吞吐量远高于设备孪生更新，因此有时需要避免为每条设备到云消息更新设备孪生。
 > + 由于设备到云消息允许的吞吐量远高于设备孪生更新，因此有时需要避免为每条设备到云消息更新设备孪生。
@@ -758,12 +764,13 @@ func main() {
 ## 5.4 代码示例
 
 ### 5.4.1 Install
+
 ```bash
-# install
 go get github.com/tomtao626/iothub
 ```
 
 ### 5.4.2 Demo
+
 ```go
 package main
 
@@ -814,11 +821,13 @@ func main() {
 | 协议	 | 使用 MQTT 或 AMQP 时可用。	                        | 使用 MQTT 或 AMQP 时可用。	                                | 在所有协议上可用。 使用 HTTPS 时，设备必须轮询。 |
 
 ### 6.2.1 备注
+
 >  + 可以通过面向服务的终结点 `/messages/devicebound` 发送从云到设备的消息。 随后设备可以通过特定于设备的终结点 `/devices/{deviceId}/messages/devicebound` 接收这些消息。
 >  + 要将每个从云到设备的消息都设为以单个设备为目标，请通过 `IoT` 中心将 `to` 属性设置为 `/devices/{deviceId}/messages/devicebound`。
 >  + 每个设备队列最多可以保留 50 条云到设备的消息。 尝试将更多消息传送到同一设备会导致错误。
 
 ## 6.3 消息生命周期
+
 >  + ![](https://docs.microsoft.com/zh-cn/azure/iot-hub/media/iot-hub-devguide-messages-c2d/lifecycle.png)
 >  + IoT 中心服务向设备发送消息时，该服务会将消息状态设置为“`排队`”。 
 >  + 当设备想要接收某条消息时，`IoT` 中心会通过将状态设置为“`不可见`”来锁定该消息。 这种状态使得设备上的其他线程可以开始接收其他消息。 
@@ -831,6 +840,7 @@ func main() {
 >  + 在设备将任务说明保留到本地存储后完成该云到设备的消息。 在作业进度的不同阶段，可以使用一条或多条设备到云的消息通知解决方案后端。
 
 ### 6.3.1 消息到期时间
+
 >  + 每条云到设备的消息都有过期时间。 可通过以下任一方式设置此时间：
 >  + 服务中的 `ExpiryTimeUtc` 属性
 >  + 使用了指定为 `IoT` 中心属性的默认生存时间的 `IoT` 中心。
@@ -840,6 +850,7 @@ func main() {
 > + 不处于联机状态，或出现故障
 
 ## 6.4 消息反馈
+
 >  + 发送云到设备的消息时，服务可以请求传送每条消息的反馈（关于该消息的最终状态）。 为此，可将要发送的设备到云消息中的 iothub-ack 应用程序属性设置为以下四个值之一：
 >  + 如果 Ack 值为 full，且未收到反馈消息，则意味着反馈消息已过期。 该服务无法了解原始消息的经历。 实际上，服务应该确保它可以在反馈过期之前对其进行处理。 最长过期时间是两天，因此当发生故障时，有时间让服务再次运行。
 
@@ -863,6 +874,7 @@ func main() {
 | deviceGenerationId	 | 与此反馈信息相关的从云到设备的消息的目标设备的 DeviceGenerationId                                                       |
 
 ### 6.4.1 消息Json示例
+
 ```json
 [
   {
@@ -878,10 +890,12 @@ func main() {
 ```
 
 ### 6.4.2 所删除设备的待处理反馈
+
 >  + 删除设备时，也会删除任何待处理的反馈。 设备反馈是成批发送的。 如果在设备确认收到消息和准备下一个反馈批次之间的窄窗口（通常少于 1 秒）内删除设备，则不会发生反馈。
 >  + 可以通过等待一段时间让待处理的反馈在删除设备之前到达来解决此问题。 删除设备后，应认为相关消息反馈丢失。
 
 ## 6.5 云到设备的配置选项
+
 >  + 每个 `IoT` 中心都针对云到设备的消息传送公开以下配置选项：
 
 | 属性	                            | 描述	               | 范围和默认值                                     |
@@ -898,12 +912,13 @@ func main() {
 ## 6.6 代码示例
 
 ### 6.6.1 Install
+
 ```bash
-# install
 go get github.com/tomtao626/iothub
 ```
 
 ### 6.6.2 Demo
+
 ```go
 package main
 
@@ -986,6 +1001,7 @@ func main() {
 >     + Content-Type:application/json
 >     + Authorization:""
 >   + RequestBody: 
+
 ```json
 {
            "methodName": "TestMethod",
@@ -996,6 +1012,7 @@ func main() {
            }
        } 
 ```
+
 >   + 在请求中作为 responseTimeoutInSeconds 提供的值是 IoT 中心服务在设备上执行直接方法所需等待的时间。 将此超时设置为至少与设备的直接方法的预期执行时间一样长。 如果未提供超时，则使用默认值：30 秒。 responseTimeoutInSeconds 的最小值和最大值分别为 5 秒和 300 秒。 
 >   + 在请求中作为 connectTimeoutInSeconds 提供的值是在调用直接方法后，IoT 中心服务等待断开连接的服务进入联机状态所需的时间。 默认值为 0，表示在调用直接方法时，设备必须已处于联机状态。 connectTimeoutInSeconds 的最大值为 300 秒。
 
@@ -1016,6 +1033,7 @@ curl -X POST \
 ```
 
 ## 7.4 直接方法调用响应
+
 > + 后端应用接收响应，响应由以下项构成： 
 > + status 和 body 均由设备提供，用于响应，其中包含设备自身的状态代码和/或描述
 >   + HTTP 状态代码： 
@@ -1024,6 +1042,7 @@ curl -X POST \
 >     + 504 表示由于设备在 responseTimeoutInSeconds 秒内未响应直接方法调用而导致网关超时。
 >   + 标头，包含 ETag、请求 ID、内容类型和内容编码。
 > + 采用以下格式的 JSON 正文：
+
 ```json
 {
 "status" : 200,
@@ -1271,6 +1290,7 @@ func main() {
     }
 }
 ```
+
 > + 根对象中包含设备标识属性，以及 `tags`、`reported` 和 `desired` 属性的容器对象。 `properties` 容器包含设备孪生元数据和乐观并发部分描述的一些只读元素（`$metadata` 和 `$version`）
 
 ## 9.4 后端操作设备孪生
@@ -1279,6 +1299,7 @@ func main() {
 
 > + 部分更新设备孪生。 解决方案后端可以使用此操作部分更新设备孪生中的标记或所需属性。 部分更新以 `JSON` 文档的形式表示，可添加或更新任何属性。 将删除设置为 `null` 的属性。 
 > + 以下示例创建值为 `{"newProperty": "newValue"}` 的新所需属性，将现有值 `existingProperty` 覆盖为 `otherNewValue`，并删除 `otherOldProperty`。 不会对现有的所需属性或标记进行其他任何更改
+
 ```json
 {
      "properties": {
@@ -1292,6 +1313,7 @@ func main() {
      }
 }
 ```
+
 > + 使用类似于 SQL 的 IoT 中心查询语言查询设备孪生。
 > + 使用作业针对大型设备孪生集执行操作。
 > + 替换所需属性。 解决方案后端可以使用此操作完全覆盖所有现有的所需属性，并使用新 `JSON` 文档替代 `properties/desired`。
@@ -1311,9 +1333,8 @@ func main() {
 | iothub-message-schema	 | twinChangeNotification     |
 | opType	                | “replaceTwin”或“updateTwin” |
 
->  + 正文
+> + 本部分包括 JSON 格式的所有孪生更改。 它使用与修补程序相同的格式，不同的是它可以包含所有孪生节：标记、properties.reported、properties.desired，并且它包含“$metadata”元素。 例如，
 
-> 本部分包括 JSON 格式的所有孪生更改。 它使用与修补程序相同的格式，不同的是它可以包含所有孪生节：标记、properties.reported、properties.desired，并且它包含“$metadata”元素。 例如，
 ```json
 {
   "properties": {
@@ -1359,6 +1380,7 @@ func main() {
 > + 终结点：`{iot hub}.azure-devices.net/devices/{deviceId}/files`
 > + 方法：`POST`
 > + HTTP：`POST https://fully-qualified-iothubname.azure-devices.net/devices/{deviceId}/files?api-version=2020-03-13`
+
 ```json
 {
     "correlationId":"MjAyMTA3MzAwNjIxXzBiNjgwOGVkLWZjNzQtN...MzYzLWRlZmI4OWQxMzdmNF9teWZpbGUudHh0X3ZlcjIuMA==",
@@ -1373,7 +1395,7 @@ func main() {
 
 > + IoT 中心使用相关 ID 和 SAS URI 的元素进行响应，设备可以使用这些元素向 Azure 存储进行身份验证。 此响应受目标 IoT 中心的限制和每设备上传限制的制约。
 > + 参数描述
-> + 
+
 | 属性            | 	描述                                                                                               |
 |---------------|---------------------------------------------------------------------------------------------------|
 | correlationId | 设备在将文件上传完成通知发送到 IoT 中心时使用的标识符。                                                                    |
@@ -1395,14 +1417,14 @@ func main() {
 
 > + 支持的协议：`HTTPS`
 > + HTTP demo示例:
->  +  以下示例演示用于创建或更新小型块 `blob` 的 `Put Blob` 请求。 请注意，用于此请求的 `URI` 是上一部分中 `IoT` 中心返回的 `SAS URI`。 `x-ms-blob-type` 标头指示此请求适用于块 `blob`。 如果请求成功，`Azure` 存储将返回 `201 Created`。
+> + 以下示例演示用于创建或更新小型块 `blob` 的 `Put Blob` 请求。 请注意，用于此请求的 `URI` 是上一部分中 `IoT` 中心返回的 `SAS URI`。 `x-ms-blob-type` 标头指示此请求适用于块 `blob`。 如果请求成功，`Azure` 存储将返回 `201 Created`。
+
 ```shell
 PUT https://contosostorageaccount.blob.core.windows.net/device-upload-container/mydevice/myfile.txt?sv=2018-03-28&sr=b&sig=mBLiODhpKXBs0y9RVzwk1S...l1X9qAfDuyg%3D&se=2021-07-30T06%3A11%3A10Z&sp=rw HTTP/1.1
 Content-Length: 11
 Content-Type: text/plain; charset=UTF-8
 Host: contosostorageaccount.blob.core.windows.net
 x-ms-blob-type: BlockBlob
-
 hello world
 ```
 
@@ -1413,6 +1435,7 @@ hello world
 > + 终结点：`{iot hub}.azure-devices.net/devices/{deviceId}/files/notifications`
 > + 方法：`POST`
 > + HTTP: `POST https://fully-qualified-iothubname.azure-devices.net/devices/{deviceId}/files/notifications?api-version=2020-03-13`
+
 ```json
 {
     "correlationId": "MjAyMTA3MzAwNjIxXzBiNjgwOGVkLWZjNzQtN...MzYzLWRlZmI4OWQxMzdmNF9teWZpbGUudHh0X3ZlcjIuMA==",
@@ -1423,12 +1446,14 @@ hello world
 ```
 
 #### 10.2.3-1 参数描述
+
 | 属性                 | 	描述                                    |
 |--------------------|----------------------------------------|
 | correlationId      | 	初始 SAS URI 请求中接收的相关 ID。               |
 | isSuccess	         | 一个布尔值，指示文件上传是否成功。                      |
 | statusCode	        | 一个整数，表示文件上传的状态代码。 通常为三位数；例如 200 或 201。 |
 | statusDescription	 | 文件上传状态说明。                              |
+
 > + 当它从设备收到文件上传完成通知时，IoT 中心将执行以下操作：
 >  + 如果配置了文件上传通知，则触发到后端服务的文件上传通知。
 >  + 释放与文件上传关联的资源。 如果未收到通知，IoT 中心将保留资源，直到与上传关联的 SAS URI 生存时间 (TTL) 过期。
@@ -1441,6 +1466,7 @@ hello world
 > + 终结点：`{iot hub}.azure-devices.net/messages/servicebound/fileuploadnotifications`
 > + 方法 `GET`
 > + 从文件上传通知终结点检索到的每条消息都是 JSON 记录：
+
 ```json
 {
 "deviceId":"mydevice",
@@ -1453,7 +1479,8 @@ hello world
 ```
 
 #### 10.2.4-1 参数描述
-> + 
+
+
 | 属性	              | 说明                                                               |
 |------------------|------------------------------------------------------------------|
 | enqueuedTimeUtc	 | 指示通知创建时间的时间戳。                                                    |
@@ -1462,4 +1489,5 @@ hello world
 | blobName	        | 已上传文件的名称。 该名称采用以下格式：{device ID of the device}/{name of the blob} |
 | lastUpdatedTime	 | 指示文件更新时间的时间戳。                                                    |
 | blobSizeInBytes	 | 一个整数，表示上传文件的大小（以字节为单位）。                                          |
+
 > + 服务可以使用通知来管理上传。 例如，它们可以触发自己对 blob 数据的处理，使用其他 Azure 服务触发 blob 数据处理，或记录文件上传通知以便以后查看。
