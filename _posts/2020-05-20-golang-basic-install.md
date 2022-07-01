@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: Golang开发环境搭建
-categories: [Golang]
+categories: [Golang, Go一把梭]
 ---
 
 # 1 支持平台
