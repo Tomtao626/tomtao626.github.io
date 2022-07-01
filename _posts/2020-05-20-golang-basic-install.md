@@ -1,3 +1,9 @@
+---
+layout: mypost
+title: Golang开发环境搭建
+categories: [Golang]
+---
+
 # 1 支持平台
 
 > + FreeBSD
@@ -170,3 +176,10 @@ go env -w GO111MODULE=on
 ```bash
 use replace github.com/maelvls/beers => ../beers
 ```
+
+# 6 开发工具
+
+golang开发的IDE无外乎以下两种:
+
+> + Goland (付费)
+> + vscode + go plugins (白嫖)
