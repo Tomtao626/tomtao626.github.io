@@ -183,3 +183,5 @@ golang开发的IDE无外乎以下两种:
 
 > + Goland (付费)
 > + vscode + go plugins (白嫖)
+
+看个人使用习惯，我这里推荐goland，上手更快，更加友好。
