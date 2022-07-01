@@ -132,10 +132,10 @@ go env
 ```
 
 > + Windows
->   + ![img.png](../posts/2020/05/20/goenv-win.png)
+>   + ![img.png](/posts/2020/05/20/goenv-win.png)
 
 > + Linux
->   + ![img_1.png](../posts/2020/05/20/goenv-ubuntu.png)
+>   + ![img_1.png](/posts/2020/05/20/goenv-ubuntu.png)
 
 ## 5.2 GOPROXY代理
 
