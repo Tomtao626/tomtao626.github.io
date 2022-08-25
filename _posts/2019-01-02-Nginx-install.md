@@ -6,7 +6,7 @@ categories: [Nginx, Linux]
 
 1.使用远程工具ssh连接linux
 2.需要准备的文件
-
+![img_3.png](/posts/2019/01/02/img_3.png)
 wget http://nginx.org/download/nginx-1.12.2.tar.gz
 3.安装nginx
 3.1 pcre安装依赖
@@ -33,9 +33,10 @@ make && make install
 (1) 查看开放的防火墙端口
 # 查看开放的防火墙端口
 firewall-cmd --list-all
-
+![img.png](/posts/2019/01/02/img.png)
 (2)设置开放的端口
 firewall-cmd --add-port=8001/tcp --permanent
+![img_2.png](/posts/2019/01/02/img_2.png)
 (3)重启防火墙
 firewall-cmd --reload
 # 查看开放的防火墙端口
@@ -43,7 +44,7 @@ firewall-cmd --reload
 6.nginx常用命令
 (1)查看版本号
 nginx -v
-
+![img_1.png](/posts/2019/01/02/img_1.png)
 (2)启动
 service nginx start
 systemctl start nginx

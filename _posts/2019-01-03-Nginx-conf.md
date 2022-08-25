@@ -5,7 +5,7 @@ categories: [Nginx, Linux]
 ---
 
 1.nginx配置文件由三部分组成
-![img.png](../posts/2019/01/03/img.png)
+![img.png](/posts/2019/01/03/img.png)
 
 (1)全局块- 
 从配置文件开始到events块之间的内容,主要设置一些影响nginx服务器整体运行的配置指令
