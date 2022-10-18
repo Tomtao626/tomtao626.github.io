@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: Python中的collections模块
+title: Python中的-collections模块
 categories: [Python]
 ---
 

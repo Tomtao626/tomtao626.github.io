@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: Python语言特性
+title: Python-语言特性
 categories: [Python]
 ---
 

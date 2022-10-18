@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: Python内置函数
+title: Python-内置函数
 categories: [Python]
 ---
 

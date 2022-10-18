@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: Python多线程与join()使用
+title: Python-多线程与join()使用
 categories: [Python]
 ---
 

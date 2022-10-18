@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: Python Tornado异步原理
+title: Python-Tornado异步原理
 categories: [Python, Tornado]
 ---
 

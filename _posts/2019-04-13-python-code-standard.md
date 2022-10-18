@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: Python编码规范
+title: Python-编码规范
 categories: [Python]
 ---
 

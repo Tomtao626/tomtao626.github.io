@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: Python文件操作
-categories: [Python]
+categories: [Python, I/O]
 ---
 
 # x="abc",y="def",z=["d","e","f"]，分别求出 x.join(y) 和 x.join(z) 返回的结果

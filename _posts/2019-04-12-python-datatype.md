@@ -1,9 +1,8 @@
 ---
 layout: mypost
-title: Python数据类型
+title: Python-数据类型
 categories: [Python]
 ---
-
 
 # Python 中的可变和不可变数据类型（基于地址而言）
 > + 可变类型：当变量的值更改，那么变量对应的内存地址不会更改， 对象的 id 值不变；
