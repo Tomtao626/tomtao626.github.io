@@ -1,7 +1,7 @@
 ---
 layout: mypost
 title: Python-Web框架
-categories: [Python，Web]
+categories: [Python, Web]
 ---
 
 ## flask           [微型网络开发框架]
