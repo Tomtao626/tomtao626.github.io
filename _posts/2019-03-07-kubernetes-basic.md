@@ -192,19 +192,19 @@ kubeadm token create --print-join-command
 
 > 报错处理
 
-- [ERROR FileContent--proc-sys-net-bridge-bridge-nf-call-iptables]: /proc/sys/net/bridge/bridge-nf-call-iptables contents are not set to 1
+- 报错[ERROR FileContent--proc-sys-net-bridge-bridge-nf-call-iptables]: /proc/sys/net/bridge/bridge-nf-call-iptables contents are not set to 1
 
 ```shell
 echo 1 >/proc/sys/net/bridge/bridge-nf-call-iptables
 ```
 
-- [ERROR FileContent--proc-sys-net-ipv4-ip_forward]: /proc/sys/net/ipv4/ip_forward contents are not set to 1
+- 报错[ERROR FileContent--proc-sys-net-ipv4-ip_forward]: /proc/sys/net/ipv4/ip_forward contents are not set to 1
 
 ```shell
 echo 1 >/proc/sys/net/ipv4/ip_forward
 ```
 
-- [ERROR Swap]: running with swap on is not supported. Please disable swap
+- 报错[ERROR Swap]: running with swap on is not supported. Please disable swap
 
 ```shell
 swapoff -a
