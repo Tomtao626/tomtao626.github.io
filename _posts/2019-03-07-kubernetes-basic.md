@@ -56,7 +56,7 @@ categories: [Linux, Docker, Kubernetes]
 
 > 简单理解：Pod可运行的原子，name定义名字，namespace名称空间（放一堆名字），label标签（另外的名字），service提供服务，ingress通信
 
-![1582188308711](/posts/2019/03/03/1582188308711.png)
+![20220307-k8s-basic01](/posts/2019/03/03/20220307-k8s-basic01.png)
 
 > **kubectl**: 是操作k8s集群的命令行工具，安装在k8s的master节点，kubectl在$HOME/.kube目录中查找一个名为config的文件, 你可以通过设置Kubeconfig环境变量或设置--kubeconfig来指定其他的kubeconfig文件。kubectl通过与apiserver交互可以实现对k8s集群中各种资源的增删改查
 > 
