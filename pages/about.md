@@ -13,6 +13,6 @@ title: 关于我
 
 - QQ&nbsp;&nbsp;&nbsp;&nbsp;: NzUxODI1MjUz
 
-- Email&nbsp;: [tom_tao626@qq.com](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=8YWenK6FkJ7Hw8exgIDfkp6c)
+- Email&nbsp;: [tp320670258@gmail.com](tp320670258@gmail.com)
 
 - GitHub: [https://github.com/Tomtao626](https://github.com/Tomtao626)
