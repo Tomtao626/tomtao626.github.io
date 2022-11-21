@@ -74,6 +74,30 @@ categories: [Linux, Docker, Kubernetes]
 > 
 > **Node**: 运行容器应用，由Master管理
 
+## 1.2 k8s集群架构
+
+> Master-Worker架构模式
+> + Master相当于是大脑和心脏，负责接收外部请求/管理和调度Worker节点。
+> + Worker相当于四肢，每一台worker都干着相同的工作，随时可以被剔除或加入，以实现横向伸缩。
+
+### 1.2.1 Master组件
+
+- kube-apiserver:对外暴露可以操作整个kubernetes集群的REST API
+- kube-scheduler:负责调度worker上的pods
+- kube-controller-manager:管理各种kubernetes定义的controller
+- etcd:key-value存储组件，采用Raft协议，存储集群的各种状态数据，包括配置/节点/pod等
+  - 持久化能力： 有些 KV 缓存并不具备该能力，比如 memcache。 
+  - 数据一致性 
+  - 高可用 
+  - 高性能 
+  - 安全性： 支持基于 TLS 与 SSL 的鉴权。 也可以看看 etcd 官网自己是怎么说的。最后可能还有一点，etcd 是使用 golang 开发的，是 Clouad Native 阵营里的“自己人”。
+
+### 1.2.2 Worker/Node组件
+
+- kubelet:
+- kube-proxy:操纵机器上的iptables网络规则，执行转发是一个Agent，监控node上的container是否正常运行
+- container runtime:容器运行的基础环境，负责下载镜像和运行容器
+
 # 2.k8s集群搭建
 
 ## 2.1 环境配置
