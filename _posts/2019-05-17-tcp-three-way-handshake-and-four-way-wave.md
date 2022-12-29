@@ -59,7 +59,7 @@ categories: [TCP/IP, HTTP]
 - 第二次握手：服务器收到syn包，必须确认客户端SYN(ack=j+1)，同时服务端也会发送一个syn包(syn=k)，也就是SYN+ACK包，并为这次连接分配资源，此时服务器进入SYN_RECV状态；
 - 第三次握手：客户端收到服务器发送过来的SYN+ACK包，向服务器发送确认包ACK(ack=k+1)，并分配资源，此时包发送完毕，客户端和服务端进入ESTABLISHED(TCP连接成功)状态，完成三次握手。
 
-![three-hands](/posts/2019/05/17/three-hangs.png)
+![three-hands](/posts/2019/05/17/three-hands.png)
 
 - 白话讲就是：
   - 1.请求建立连接，并发出序号；
