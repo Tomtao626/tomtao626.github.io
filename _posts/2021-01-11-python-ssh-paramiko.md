@@ -57,14 +57,14 @@ transport.close()
 ```python
 import paramiko
 
-private_key = paramiko.RSAKey.from_private_key_file(r'/Users/tao626/.ssh/id_rsa')
+private_key = paramiko.RSAKey.from_private_key_file(r'~/.ssh/id_rsa')
 
 # 创建SSH对象
 ssh = paramiko.SSHClient()
 # 允许连接不在know_hosts文件中的主机
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 # 连接服务器
-ssh.connect(hostname='192.168.16.85', port=22, username='root', pkey=private_key)
+ssh.connect(hostname='192.168.10.8', port=22, username='root', pkey=private_key)
 
 # 执行命令
 stdin, stdout, stderr = ssh.exec_command('df')
@@ -82,9 +82,9 @@ print(result)
 ```python
 import paramiko
 
-private_key = paramiko.RSAKey.from_private_key_file(r'C:/Users/Administrator/.ssh/id_rsa')
+private_key = paramiko.RSAKey.from_private_key_file(r'~/.ssh/id_rsa')
 
-transport = paramiko.Transport(('192.168.16.85', 22))
+transport = paramiko.Transport(('192.168.10.8', 22))
 transport.connect(username='root', pkey=private_key)
 
 sftp = paramiko.SFTPClient.from_transport(transport)
@@ -102,7 +102,7 @@ transport.close()
 ```python
 # 也可以是存在于数据库中
 key = """-----BEGIN RSA PRIVATE KEY-----
-
+......
 -----END RSA PRIVATE KEY-----"""
 
 import paramiko
@@ -115,7 +115,7 @@ ssh = paramiko.SSHClient()
 # 允许连接不在know_hosts文件中的主机
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 # 连接服务器
-ssh.connect(hostname='192.168.16.85', port=22, username='root', pkey=private_key)
+ssh.connect(hostname='192.168.10.8', port=22, username='root', pkey=private_key)
 
 # 执行命令
 stdin, stdout, stderr = ssh.exec_command('df')
@@ -138,8 +138,8 @@ sh-keygen.exe -m pem
 .ssh/id_rsa.pub    .ssh/id_rsa
 
 # 3 把公钥放到服务器
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.16.85
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.10.8
 
 # 4 以后再连接服务器时，不需要在输入密码
-ssh root@192.168.16.85
+ssh root@192.168.10.8
 ```
