@@ -868,7 +868,7 @@ func main() {
     "hostName":"contosostorageaccount.blob.core.windows.net",
     "containerName":"device-upload-container",
     "blobName":"mydevice/myfile.txt",
-    "sasToken":"?sv=2018-03-28&sr=b&sig=mBLiODhpKXBs0y9RVzwk1S...l1X9qAfDuyg%3D&se=2021-07-30T06%3A11%3A10Z&sp=rw"
+    "sasToken":"?sv=2018-07-28&sr=b&sig=mBLiODhpKXBs0y9RVzwk1S...l1X9qAfDuyg%3D&se=2021-07-30T06%3A11%3A10Z&sp=rw"
 }
 ```
 
@@ -901,7 +901,7 @@ func main() {
 > + 以下示例演示用于创建或更新小型块 `blob` 的 `Put Blob` 请求。 请注意，用于此请求的 `URI` 是上一部分中 `IoT` 中心返回的 `SAS URI`。 `x-ms-blob-type` 标头指示此请求适用于块 `blob`。 如果请求成功，`Azure` 存储将返回 `201 Created`。
 
 ```shell
-PUT https://contosostorageaccount.blob.core.windows.net/device-upload-container/mydevice/myfile.txt?sv=2018-03-28&sr=b&sig=mBLiODhpKXBs0y9RVzwk1S...l1X9qAfDuyg%3D&se=2021-07-30T06%3A11%3A10Z&sp=rw HTTP/1.1
+PUT https://contosostorageaccount.blob.core.windows.net/device-upload-container/mydevice/myfile.txt?sv=2018-07-28&sr=b&sig=mBLiODhpKXBs0y9RVzwk1S...l1X9qAfDuyg%3D&se=2021-07-30T06%3A11%3A10Z&sp=rw HTTP/1.1
 Content-Length: 11
 Content-Type: text/plain; charset=UTF-8
 Host: contosostorageaccount.blob.core.windows.net
