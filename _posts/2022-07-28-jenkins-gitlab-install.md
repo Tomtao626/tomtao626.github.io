@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: Jenkins-Gitlab
+title: Jenkins-Gitlab安装和使用
 categories: [Cloud, Linux, Jenkins, Gitlab, CICD]
 ---
 
