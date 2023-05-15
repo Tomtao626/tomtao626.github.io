@@ -12,21 +12,33 @@ categories: [Python, Golang, 面试]
 - 数组的初始化
 
 ```go
-var 数组名 [数组大小]数据类型
-var intArr [3]int
-// 当定义完数组时,其实数组的各个元素有默认值 0 
-// 赋初值 
-intArr[0]=10 
-intArr[1]=20
-intArr[2]=30
-fmt.Println(intArr)
-var arr1 [3]int
-arr2 := [3]int{1, 2, 3}
-arr3 := [...]int{1, 2, 3, 4, 5}
-arr4 := [3]int{1: 10, 2: 20}
-arr5 := [...]int{1: 10, 2: 20}
-arr6 := [3][2]int{{1, 2}, {3, 4}, {5, 6}}
-arr7 := [...][2]int{{1, 2}, {3, 4}, {5, 6}}
+package main
+import "fmt"
+
+func main() {
+  //var 数组名 [数组大小]数据类型
+  var intArr [3]int
+  // 当定义完数组时,其实数组的各个元素有默认值 0 
+  // 赋初值 
+  intArr[0]=10
+  intArr[1]=20
+  intArr[2]=30
+  fmt.Println(intArr)
+  var arr1 [3]int
+  arr2 := [3]int{1, 2, 3}
+  arr3 := [...]int{1, 2, 3, 4, 5}
+  arr4 := [3]int{1: 10, 2: 20}
+  arr5 := [...]int{1: 10, 2: 20}
+  arr6 := [3][2]int{{1, 2}, {3, 4}, {5, 6}}
+  arr7 := [...][2]int{{1, 2}, {3, 4}, {5, 6}}
+  fmt.Println(arr1)
+  fmt.Println(arr2)
+  fmt.Println(arr3)
+  fmt.Println(arr4)
+  fmt.Println(arr5)
+  fmt.Println(arr6)
+  fmt.Println(arr7)
+}
 ```
 
 ![golang-array.png](https://cdn.nlark.com/yuque/0/2023/png/1239868/1684191081671-e3004592-4ec6-4b96-965a-27a2cb2d8a16.png#averageHue=%23f5f3f3&clientId=u7de729bf-cca4-4&from=paste&height=288&id=u554e9151&originHeight=576&originWidth=1022&originalType=binary&ratio=2&rotation=0&showTitle=false&size=44864&status=done&style=none&taskId=u49914335-3800-4fb1-9111-402290e94e6&title=&width=511)
@@ -39,18 +51,25 @@ arr7 := [...][2]int{{1, 2}, {3, 4}, {5, 6}}
    - (5) 数组的属性类型,默认情况是值传递,因此会进行值拷贝.数组之间不会相互影响,如果想在其他函数中,去修改原来的数组,可以使用引用传递(指针方式)
 
 ```go
-arr := [3]int{1,2,3}
+package main
+import "fmt"
+
+func main() {
+  arr := [3]int{1,2,3}
+  test02(&arr)
+  fmt.Println(arr)
+  test01(arr)
+  fmt.Println(arr)
+}
+
 func test01(arr [3]int) {
 		arr[0] = 66
 }
-test01(arr)
-fmt.Println(arr)
 
 func test02(arr *[3]int) {
 		(*arr)[0] = 66
 }
-test02(&arr)
-fmt.Println(arr)
+
 ```
 
 - 数组的遍历
