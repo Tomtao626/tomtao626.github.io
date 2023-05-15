@@ -12,23 +12,21 @@ categories: [Python, Golang, 面试]
 - 数组的初始化
 
 ```go
-func main() {
-	var 数组名 [数组大小]数据类型
-	var intArr [3]int
-	// 当定义完数组时,其实数组的各个元素有默认值 0 
-	// 赋初值 
-	intArr[0]=10 
-	intArr[1]=20
-	intArr[2]=30
-	fmt.Println(intArr)
-	var arr1 [3]int
-	arr2 := [3]int{1, 2, 3}
-	arr3 := [...]int{1, 2, 3, 4, 5}
-	arr4 := [3]int{1: 10, 2: 20}
-	arr5 := [...]int{1: 10, 2: 20}
-	arr6 := [3][2]int{{1, 2}, {3, 4}, {5, 6}}
-	arr7 := [...][2]int{{1, 2}, {3, 4}, {5, 6}}
-}
+var 数组名 [数组大小]数据类型
+var intArr [3]int
+// 当定义完数组时,其实数组的各个元素有默认值 0 
+// 赋初值 
+intArr[0]=10 
+intArr[1]=20
+intArr[2]=30
+fmt.Println(intArr)
+var arr1 [3]int
+arr2 := [3]int{1, 2, 3}
+arr3 := [...]int{1, 2, 3, 4, 5}
+arr4 := [3]int{1: 10, 2: 20}
+arr5 := [...]int{1: 10, 2: 20}
+arr6 := [3][2]int{{1, 2}, {3, 4}, {5, 6}}
+arr7 := [...][2]int{{1, 2}, {3, 4}, {5, 6}}
 ```
 
 ![golang-array.png](https://cdn.nlark.com/yuque/0/2023/png/1239868/1684191081671-e3004592-4ec6-4b96-965a-27a2cb2d8a16.png#averageHue=%23f5f3f3&clientId=u7de729bf-cca4-4&from=paste&height=288&id=u554e9151&originHeight=576&originWidth=1022&originalType=binary&ratio=2&rotation=0&showTitle=false&size=44864&status=done&style=none&taskId=u49914335-3800-4fb1-9111-402290e94e6&title=&width=511)
@@ -498,16 +496,61 @@ fmt.Println(arr1)
 
 ```go
 // 创建一个byte类型的26个元素的数组,分别放置'A'-'Z'.使用for循环访问所有元素并打印出来
+package main
+
+import "fmt"
+
 func main() {
-		var myChars [26]byte
-for i:=0;i<2;i++{
-		myChars[i] = 'A'+byte(i)
-		}
-for i:=0;i<26;i++{
-		fmt.Printf("%c ", myChars[i])
-		}
+    var myChars [26]byte
+    for i:=0;i<2;i++{
+        myChars[i] = 'A'+byte(i)
+        }
+    for i:=0;i<26;i++{
+        fmt.Printf("%c ", myChars[i])
+        }
+}
+```
+
+```go
+package main
+import "fmt"
+// 求数组的最大值,并得到对应的下标
+func main() {
+  var intArr [5]int = [...]int{1, -1, 9, 90, 11}
+  maxVal := intArr[0]
+  maxValIndex := 0
+  for i:=1;i<len(intArr);i++{
+    if maxVal<intArr[i]{
+      maxVal = intArr[i]
+      maxValIndex = i
+    }
+  }
+  fmt.Printf("maxVal=%v maxValIndex=%v", maxVal, maxValIndex)
 }
 
+```
+
+```go
+package main
+import "fmt"
+// 求数组的最大值,并得到对应的下标
+func main() {
+    var intArr [5]int = [...]int{1, -1, 9, 90, 11}
+    maxVal := intArr[0]
+    maxValIndex := 0
+    for i:=1;i<len(intArr);i++ {
+		if maxVal < intArr[i] {
+			maxVal = intArr[i]
+			maxValIndex = i
+		}
+	}
+    fmt.Printf("maxVal=%v maxValIndex=%v", maxVal, maxValIndex)
+}
+```
+
+```go
+package main
+import "fmt"
 // 求数组的最大值,并得到对应的下标
 func main() {
     var intArr [5]int = [...]int{1, -1, 9, 90, 11}
@@ -521,35 +564,6 @@ func main() {
         }
 }
 fmt.Printf("maxVal=%v maxValIndex=%v", maxVal, maxValIndex)
-
-// 求一个数组的和一级平均值 for-range
-func main() {
-    var intArr [5]int = [...]int{1, -1, 9, 90, 11}
-    sum := 0
-    for _, val := range intArr {
-        sum += val
-    }
-    fmt.Println("sum=", sum, "avg=", float64(sum)/float64(len(intArr)))
-}
-
-// 随机生成五个数,并将其反转打印
-func main() {
-    var intArr [5]int
-	// 为了每次生成的随机数不一样,需要给一个seed值
-	lens := len(intArr)
-	rand.Seed(time.Now().UnixNano())
-	for i:=0;i<lens;i++{
-        intArr[i] = rand.Intn(100)
-    }
-    fmt.Println("交换前=", intArr)
-    temp := 0
-    for i:=0;i<lens/2;i++{
-        temp = intArr[lens-1-i]
-        intArr[len-1-i] = intArr[i]
-        intArr[i] = temp
-    }
-    fmt.Println("交换后=", intArr)
-}
 ```
 
 ### **1.1.2 slice**
@@ -2107,4 +2121,3 @@ func main() {
 > - (6）执行任务。
 > - (7）获取任务结果。
 > - (8）处理任务结果。
-
