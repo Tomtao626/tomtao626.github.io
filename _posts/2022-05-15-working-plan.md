@@ -23,7 +23,7 @@ func main() {
   intArr[0]=10
   intArr[1]=20
   intArr[2]=30
-  
+  fmt.Println(intArr)
   var arr1 [3]int
   arr2 := [3]int{1, 2, 3}
   arr3 := [...]int{1, 2, 3, 4, 5}

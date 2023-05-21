@@ -95,8 +95,27 @@ categories: [Linux, Docker, Kubernetes]
 ### 1.2.2 Worker/Node组件
 
 - kubelet:
+  - watch API Server，获取pod的变化情况, Pod需绑定到当前节点: PodSpec
+  - API Server 将PodSpec规范,下发给kubelet, 容器名称 容器镜像 容器存储等
+  - kubelet根据对应的信息, registry获取镜像 通过CNI网络插件获取IP地址 通过CSI存储卷相关信息
+  - 通过Docker来运行对应的容器(container)
+
 - kube-proxy:操纵机器上的iptables网络规则，执行转发是一个Agent，监控node上的container是否正常运行
-- container runtime:容器运行的基础环境，负责下载镜像和运行容器
+  - Watch API Server 获取Service资源 EndPoints资源变更
+  - Service: 分配负载均衡IP地址 (虚拟VIP)
+  - EndPoints: 获取到对应容器的IP地址集合
+  - kubeproxy: VIP + EndPoints IP集合, 转为对应的Iptables, IPVS规则, 然后应用到所有的节点
+
+- container runtime:容器运行的基础环境，负责下载镜像和运行容器  Docker Containerd
+
+- addons:
+  - CoreDNS:
+    - 为负载均衡提供了一个稳定的名称
+  - Network:
+    - CNI: Container Network Interface
+    - Flannel: 为Pod提供了一个可以互相通信的网络 host-gw模式 在节点上创建一堆的路由条目 去往1网段的网关是多少 去往2网段的网关是多少 如果没有这个网络插件 伍发实现跨集群通信
+  - Dashboard:
+    - 图形界面: 命令行操作Kubernetes集群 
 
 # 2.k8s集群搭建
 
