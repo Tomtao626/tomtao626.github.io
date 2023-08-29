@@ -5,17 +5,32 @@ categories: [Nginx, Linux]
 ---
 
 1.使用远程工具ssh连接linux
+
 2.需要准备的文件
+
 ![img_3.png](/posts/2019/01/02/img_3.png)
 wget http://nginx.org/download/nginx-1.12.2.tar.gz
+
 3.安装nginx
+
 3.1 pcre安装依赖
+
 (1)安装pcre依赖
+
+```bash
 wget http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz
+```
+
 解压缩文件
+
+```bash
 tar -xvf pcre-8.37.tar.gz
+```
+
 编译安装
+
 ./configure
+
 make && make install
 pcre-config --version
 (2)安装openssl,zlib,gcc依赖
