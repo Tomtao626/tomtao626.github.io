@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="Go (Weiqi) board - Flutter Web" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Configure base href so that all assets resolve correctly under GitHub Pages /go/ path -->
+    <base href="/go/" />
+
+    <title>Go (Weiqi) – Flutter Web</title>
+
+    <!-- TODO: Load WASM engine loader BEFORE Flutter boots. This script is a stub for now. -->
+    <script src="engine_loader.js"></script>
+
+    <!-- The following Flutter bootstrap scripts are placeholders; when you run
+         `flutter build web --base-href=/go/`, the build will generate the
+         correct files (flutter.js, main.dart.js, asset manifests, etc.). -->
+    <script src="flutter.js" defer></script>
+  </head>
+  <body>
+    <noscript>JavaScript must be enabled to run this app.</noscript>
+    <div id="loading" style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: #333; padding: 24px;">
+      Building Flutter app... (placeholder). When built, the Go board will render here.
+    </div>
+
+    <script>
+      // When using a real Flutter build, this code is auto-generated. Provided to avoid errors.
+      (function() {
+        if (typeof window.addEventListener === 'function') {
+          window.addEventListener('load', function() {
+            if (window.flutterConfiguration) return; // assume a real build
+            const el = document.getElementById('loading');
+            if (el) {
+              el.textContent = 'Flutter web build artifacts not present. Please run `flutter build web --base-href=/go/` and copy artifacts to /go/ to see the board here.';
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
