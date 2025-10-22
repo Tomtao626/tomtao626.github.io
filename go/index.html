@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Go (Weiqi) board rendered by Flutter Web build artifacts (placeholder).">
+  <title>Go (Weiqi) – 19x19</title>
+  <!-- Set base href so assets resolve under GitHub Pages /go/ path -->
+  <base href="/go/">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <!-- TODO: Load WASM engine loader BEFORE Flutter boots. This is a stub for now. -->
+  <script src="engine_loader.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Go (Weiqi) – 19x19</h1>
+      <p>This is an initial staged web output. The source Flutter app lives under <code>/go_app</code>. Clicking the board highlights the nearest intersection.</p>
+    </header>
+    <main>
+      <div class="board-wrap">
+        <canvas id="board" aria-label="Go board canvas" role="img"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

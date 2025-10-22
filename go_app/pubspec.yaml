@@ -1,0 +1,28 @@
+name: go_app
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+
+# This is a placeholder Flutter project configuration for the Go board web app.
+# It is intentionally lightweight to keep the repository lean. Later, this app
+# can be built with `flutter build web --base-href=/go/` and artifacts placed
+# under the repository's /go/ directory for GitHub Pages hosting.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Using simple ChangeNotifier for state. Riverpod can be introduced later if desired.
+  # flutter_riverpod: ^2.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets: []

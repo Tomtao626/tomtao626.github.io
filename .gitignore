@@ -4,3 +4,18 @@
 /Gemfile.lock
 /.jekyll-cache
 .idea/*
+
+# Flutter project artifacts (keep source in /go_app, ignore local build outputs)
+/go_app/build/
+/go_app/.dart_tool/
+/go_app/.packages
+/go_app/.flutter-plugins
+/go_app/.flutter-plugins-dependencies
+/go_app/.metadata
+/go_app/ios/
+/go_app/android/
+/go_app/macos/
+/go_app/windows/
+/go_app/linux/
+/go_app/web/.dart_tool/
+/go_app/pubspec.lock
